@@ -374,7 +374,11 @@ function MainPage() {
               darkMode ? "darkBackgroundAndColor2" : "lightBackgroundLinear"
             }`}
           >
-            <h1 className="aboutMeTitle">
+            <h1
+              className={`aboutMeTitle ${
+                darkMode ? "darkColor" : "lightColor"
+              }`}
+            >
               {hungarian ? "Magamról" : "About Me"}
             </h1>
             <div className="cont">

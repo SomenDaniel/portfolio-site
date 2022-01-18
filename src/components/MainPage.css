@@ -1,0 +1,783 @@
+/* feketéhez a zöld: ##00fa00 szürkéhez a zöld:#04e762  sötét fekete: #030303* világos fekete: #212529 feketéhez a lila: #5c23fa* szürkéhez a lila: /
+/* universal ----------------------------------------------------------------------- */
+
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  overflow: auto;
+  height: 100%;
+}
+
+.cont {
+  margin: 20px;
+  padding: 20px;
+}
+
+#Active {
+  background-color: #030303;
+  border: 2px solid #030303;
+}
+
+#Inactive {
+  background-color: #03030300;
+  border: 2px solid #03030394;
+}
+
+/* colors ----------className={`${darkMode ? "darkBackground" : "lightBackground"}`}---------- */
+
+.lightTransparent {
+  background-color: #96d7ff42;
+}
+
+.darkTransparent {
+  background-color: #03030394;
+}
+
+.darkBorder {
+  border: 1px solid #ced4da;
+}
+
+.darkBorderB {
+  border: 1.5px solid #ced4da;
+}
+
+.lightBorder {
+  border: 1px solid #2f6690;
+}
+
+.lightBorderB {
+  border: 1.5px solid #2f6690;
+}
+
+.lightBackground {
+  background-color: #e9ecef;
+}
+
+.lightBackgroundLinear {
+  /* background: linear-gradient(45deg, #0349a3, #03045e); */
+  background-color: #c0d6df;
+  color: #2f6690;
+}
+
+.darkBackground {
+  background-color: #030303;
+}
+
+.darkBackgroundAndColor {
+  background-color: #030303;
+  color: #ced4da;
+}
+
+.darkBackgroundAndColor2 {
+  background-color: #121212;
+  color: #ced4da;
+}
+
+.lightBackgroundAndColor {
+  background-color: #e9ecef;
+  color: #2f6690;
+}
+
+.lightColor {
+  color: #2f6690;
+}
+
+.darkColor {
+  color: #ced4da;
+}
+
+.darkBorder {
+  border: 1px solid #121212;
+}
+
+.darkBorderBottom {
+  border-bottom: 1px solid #121212;
+}
+
+.darkBorderBottom3 {
+  border-bottom: 1px solid #ced4da;
+}
+
+.darkBorderBottomTop {
+  border-bottom: 1px solid #030303;
+  border-top: 1px solid #030303;
+}
+
+.darkBorderTop2 {
+  border-top: 1px solid #030303;
+}
+
+.darkBorderBottom2 {
+  border-bottom: 1px solid #030303;
+}
+
+.lightBorderBottom {
+  border-bottom: 1px solid #c0d6df;
+}
+
+.lightBorderBottomTop {
+  border-bottom: 1px solid #e9ecef;
+  border-top: 1px solid #e9ecef;
+}
+
+.lightBorderTop2 {
+  border-top: 1px solid #ced4da;
+}
+
+.lightBorderBottom3 {
+  border-bottom: 1px solid #2f6690;
+}
+
+.lightBorderBottom2 {
+  border-bottom: 1px solid #e9ecef;
+}
+
+.darkTogglerFrame {
+  border-left: 1px solid #ced4da;
+  border-right: 1px solid #ced4da;
+  background-color: #ced4da;
+}
+
+.lightTogglerFrame {
+  border-left: 1px solid #616261;
+  border-right: 1px solid #616261;
+  background-color: #616261;
+}
+
+.darkButton {
+  border: 1.5px solid #ced4da;
+  color: #ced4da;
+}
+
+.lightbutton {
+  border: 1.5px solid #2f6690;
+  color: #2f6690;
+}
+
+/* navbar ----------------------------------------------------------------------- */
+
+nav {
+  width: 100%;
+  height: 80px;
+  display: grid;
+  grid-template-columns: 70% 30%;
+  position: sticky;
+  top: 0;
+  display: grid;
+  grid-template-rows: 1;
+  grid-template-columns: 70% 30%;
+  z-index: 1;
+}
+.modes {
+  text-align: right;
+  align-self: center;
+}
+.modes button {
+  border: 0;
+  font-size: 15px;
+}
+
+.navButton {
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.navButton[class*="darkColor"]:hover {
+  color: #3eff8b;
+}
+
+.navButton[class*="lightColor"]:hover {
+  color: #072ac8;
+}
+
+/* .navButton:hover {
+  color: #3eff8b;
+} */
+
+.navigation {
+  align-self: center;
+}
+.navigation button {
+  font-size: 15px;
+  margin-left: 20px;
+}
+
+.language {
+  display: inline-block;
+  width: fit-content;
+  height: 30px;
+  justify-self: flex-end;
+  align-self: center;
+  margin-right: 30px;
+}
+
+.language button {
+  background-color: #03030300;
+  cursor: pointer;
+  width: 60px;
+  height: 30px;
+  border-radius: 4px;
+}
+
+.activeLanguage {
+  width: 60px;
+  height: 30px;
+  border-radius: 4px;
+}
+
+.langArr {
+  width: 30px;
+  height: 30px;
+}
+
+.modes {
+  height: 54px;
+  display: grid;
+  grid-template-columns: 80% 20%;
+}
+
+/* dark and light mode button*/
+
+.modeContainer {
+  width: 150px;
+  height: 22px;
+  justify-self: end;
+  align-self: center;
+  display: grid;
+  grid-template-columns: 25% 50% 25%;
+  margin-right: 10px;
+}
+
+.toDark {
+  cursor: pointer;
+  font-weight: bold;
+  justify-self: start;
+}
+
+.toDark[class*="darkBackgroundAndColor"]:hover {
+  color: #3eff8b;
+}
+
+.toDark[class*="lightBackgroundAndColor"]:hover {
+  color: #072ac8;
+}
+
+.toLight {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.toLight[class*="darkBackgroundAndColor"]:hover {
+  color: #3eff8b;
+}
+
+.toLight[class*="lightBackgroundAndColor"]:hover {
+  color: #072ac8;
+}
+
+.toggler {
+  cursor: pointer;
+  justify-self: center;
+  width: fit-content;
+  height: 100%;
+}
+
+.togglerFrame {
+  height: 100%;
+  width: 40px;
+  display: grid;
+  border-radius: 16px;
+}
+
+.togglerFrame[class*="darkTogglerFrame"]:hover {
+  border-left: 1px solid #3eff8b;
+  border-right: 1px solid #3eff8b;
+  background-color: #3eff8b;
+}
+
+.togglerFrame[class*="lightTogglerFrame"]:hover {
+  border-left: 1px solid #072ac8;
+  border-right: 1px solid #072ac8;
+  background-color: #072ac8;
+}
+
+.togglerBall {
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  align-self: center;
+}
+
+/* intro ----------------------------------------------------------------------- */
+.profilePicture {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.introduction {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.introduction div {
+  margin-top: 50px;
+}
+
+.name {
+  font-size: 40px;
+  margin-bottom: 30px;
+  padding-top: 20px;
+}
+
+.title {
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+.links {
+  display: grid;
+  margin-bottom: 20px;
+  height: 30px;
+  grid-template-columns: 100%;
+}
+
+.links div {
+  align-self: flex-end;
+}
+
+.profilePicture {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+/* aboutMe ----------------------------------------------------------------------- */
+
+.aboutMeContainer {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  margin-left: 100px;
+  margin-right: 100px;
+  border-radius: 4px;
+}
+
+.aboutMeContainer div {
+  margin-top: 0;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.aMDescription {
+  /* text-align: left; */
+  width: fit-content;
+}
+
+.aboutMeTitle {
+  padding-top: 20px;
+  text-align: center;
+  color: #ced4da;
+}
+/* experience  -------------------------------------------------------------------- */
+
+.workTempCont {
+  width: fit-content;
+  /* margin-top: 20px; */
+  /* margin-bottom: 20px; */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.left {
+  justify-self: start;
+}
+
+.middle {
+  justify-self: center;
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.right {
+  justify-self: end;
+}
+
+.wrapper {
+  width: 300px;
+  display: inline-block;
+}
+
+.experience h1 {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.experience > div {
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+/* projects.  -------------------------------------------------------------------- */
+
+.projects {
+  text-align: center;
+}
+
+.projectTitle {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.ProjectContainer {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  margin-left: 100px;
+  margin-right: 100px;
+  border-radius: 4px;
+  height: 700px;
+  text-align: center;
+  display: grid;
+  grid-template-columns: 10% 80% 10%;
+  grid-template-rows: 90% 10%;
+}
+
+.lRArr {
+  width: 50px;
+  height: 50px;
+}
+
+.leftArrow {
+  border: none;
+  background-color: #03030300;
+  display: inline-block;
+  align-self: center;
+  cursor: pointer;
+}
+
+.rightArrow {
+  border: none;
+  background-color: #03030300;
+  display: inline-block;
+  align-self: center;
+  cursor: pointer;
+}
+
+.dots {
+  padding-top: auto;
+  padding-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+  height: 45px;
+  display: grid;
+  grid-row-start: 2;
+  grid-row-end: 2;
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.dots button {
+  background-color: #03030300;
+  border: 2px solid #03030394;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  justify-self: center;
+  align-self: flex-end;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.dots button:hover {
+  background-color: #030303 !important;
+  border: 2px solid #030303 !important;
+}
+
+/* education.  -------------------------------------------------------------------- */
+
+.education {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  margin-left: 100px;
+  margin-right: 100px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.educationTitle {
+  padding-top: 20px;
+  margin-bottom: 10px;
+}
+
+.downArrow {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border: none;
+  background-color: #03030300;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.cte {
+  padding-top: 10px;
+  margin-bottom: 10px;
+}
+
+.dArr {
+  width: 50px;
+  height: 50px;
+}
+
+.educationInfo {
+  width: 600px;
+  overflow: auto;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* skills.  -------------------------------------------------------------------- */
+
+.skills {
+  text-align: center;
+}
+.skillsContainer {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  margin-left: 100px;
+  margin-right: 100px;
+  border-radius: 4px;
+}
+.skillsTitle {
+  margin-top: 40px;
+  padding-bottom: 20px;
+}
+
+.languages {
+  padding-top: 20px;
+  display: inline-block;
+}
+
+.languageContainer {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.Hun {
+  display: grid;
+  grid-template-columns: 80% 20%;
+  width: 100%;
+}
+
+.Enlanguage {
+  display: inline-block;
+  width: fit-content;
+  height: 30px;
+  justify-self: flex-start;
+  align-self: center;
+  margin-left: 20px;
+}
+.Hunlanguage {
+  display: inline-block;
+  width: fit-content;
+  height: 30px;
+  justify-self: flex-end;
+  align-self: center;
+  margin-right: 20px;
+}
+.Hun p {
+  text-align: right;
+}
+
+.En {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  width: 100%;
+}
+
+.En p {
+  text-align: left;
+  width: 100%;
+}
+
+.progTitle {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+
+.progSkillsList {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.progSkillsList ul {
+  /* width: calc(100% / 2); */
+  list-style-type: none;
+  list-style-position: inside;
+  align-self: center;
+  text-align: left;
+}
+
+.progSkillsList li {
+  margin-left: 50%;
+  margin-right: 20%;
+  width: 30%;
+}
+
+.SkillsFooter {
+  margin-top: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+/* footer.  -------------------------------------------------------------------- */
+
+footer {
+  overflow: auto;
+  height: 100%;
+}
+
+.footerContainer {
+  margin-top: 40px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.footerContainer > h1 {
+  text-align: center;
+}
+
+.footerDatas {
+  margin-top: 50px;
+  margin-bottom: 10px;
+  display: grid;
+  grid-template-columns: 30% 40% 30%;
+}
+
+.footerButtons {
+  display: inline-block;
+  justify-self: center;
+  grid-column-start: 2;
+  grid-column-end: 2;
+}
+
+.footerButtons button {
+  font-weight: bold;
+  background-color: #03030300;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.footerButtons button[class*="darkButton"]:hover {
+  background-color: #3eff8b;
+  border: 1.5px solid #3eff8b;
+  color: #030303;
+}
+
+.footerButtons button[class*="lightbutton"]:hover {
+  background-color: #072ac8;
+  border: 1.5px solid #072ac8;
+  color: #e9ecef;
+}
+
+.footerButtons :first-child {
+  margin-right: 20px;
+}
+
+.place {
+  justify-self: start;
+  align-self: end;
+}
+
+.signature {
+  font-size: 15px;
+  justify-self: end;
+  align-self: end;
+}
+
+/* language select-*------------------------------------------------------*/
+.LanguageSelect {
+  display: block;
+  width: fit-content;
+  height: fit-content;
+  border-radius: 4px;
+  position: fixed;
+  top: 60px;
+  right: 30px;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.LanguageSelect button {
+  width: 200px;
+  height: 50px;
+  display: grid;
+  grid-template-columns: 30% 70%;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.togglerFrame[class*="darkTogglerFrame"]:hover {
+  border-left: 1px solid #3eff8b;
+  border-right: 1px solid #3eff8b;
+  background-color: #3eff8b;
+}
+
+.LanguageSelect button:first-child[class*="darkBackgroundAndColor"] {
+  border-bottom-left-radius: 0%;
+  border-bottom-right-radius: 0%;
+  border-bottom: 1.5px solid #ced4da;
+}
+
+.LanguageSelect button:first-child[class*="lightBackgroundAndColor"] {
+  border-bottom-left-radius: 0%;
+  border-bottom-right-radius: 0%;
+  border-bottom: 1.5px solid #2f6690;
+}
+
+.LanguageSelect button[class*="darkBackgroundAndColor"]:hover {
+  color: #3eff8b;
+}
+
+.LanguageSelect button[class*="lightBackgroundAndColor"]:hover {
+  color: #072ac8;
+}
+
+.LanguageSelect img {
+  width: 40px;
+  height: 20px;
+  justify-self: center;
+  align-self: center;
+  border-radius: 2px;
+}
+
+.LanguageSelect p {
+  justify-self: flex-start;
+  align-self: center;
+  margin-left: 25%;
+  font-size: 14px;
+}

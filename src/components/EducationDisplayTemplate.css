@@ -1,0 +1,27 @@
+.EduCont {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 600px;
+  height: 150px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.EduCont > h1 {
+  display: inline-block;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.EduCont > h3 {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.eduDescription {
+  font-size: 12px;
+  height: auto;
+  margin-right: 20px;
+  margin-left: 20px;
+  text-align: left;
+}

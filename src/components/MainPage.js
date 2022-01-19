@@ -491,9 +491,9 @@ function MainPage() {
               }`}
             >
               <div className="Hun">
-                <div>
-                  <p>Hungarian</p>
-                  <p>native</p>
+                <div className="HunlanguageDesc">
+                  <p className="fix">Hungarian</p>
+                  <p className="fixx">native</p>
                 </div>
                 <div className="Hunlanguage">
                   <img src={hungary} className="activeLanguage"></img>
@@ -503,25 +503,25 @@ function MainPage() {
                 <div className="Enlanguage">
                   <img src={uk} className="activeLanguage"></img>
                 </div>
-                <div>
-                  <p>English</p>
-                  <p>intermediate. Language certificate B2</p>
+                <div className="EnlanguageDesc">
+                  <p className="fix">English</p>
+                  <p className="fixx">Language certificate B2</p>
                 </div>
               </div>
             </div>
             <h1 className="progTitle">some thing i have used</h1>
             <div className="progSkillsList">
-              <ul>
+              <ul className="one">
                 <li>JS</li>
                 <li>React</li>
                 <li>HTml</li>
               </ul>
-              <ul>
+              <ul className="two">
                 <li>Css</li>
                 <li>git</li>
                 <li>github</li>
               </ul>
-              <ul>
+              <ul className="three">
                 <li>scrum</li>
                 <li>bootstrap</li>
                 <li>Slack</li>
@@ -582,22 +582,25 @@ function MainPage() {
         >
           <div className="footerContainer">
             <h1>somendaniel7@gmail.com</h1>
+            <div className="footerButtons">
+              <div>
+                <button
+                  className={`${darkMode ? "darkButton" : "lightbutton"}`}
+                >
+                  linkedin
+                </button>
+                <button
+                  className={`${darkMode ? "darkButton" : "lightbutton"}`}
+                >
+                  linkedin
+                </button>
+              </div>
+            </div>
             <div className="footerDatas">
               <div className="place">
                 <p>Budapest, hungary</p>
               </div>
-              <div className="footerButtons">
-                <button
-                  className={`${darkMode ? "darkButton" : "lightbutton"}`}
-                >
-                  linkedin
-                </button>
-                <button
-                  className={`${darkMode ? "darkButton" : "lightbutton"}`}
-                >
-                  linkedin
-                </button>
-              </div>
+
               <div className="signature">
                 <p>2022 | Designed & coded by Dániel Sömen. &#169;</p>
               </div>

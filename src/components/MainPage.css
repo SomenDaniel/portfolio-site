@@ -1,6 +1,13 @@
 /* feketéhez a zöld: ##00fa00 szürkéhez a zöld:#04e762  sötét fekete: #030303* világos fekete: #212529 feketéhez a lila: #5c23fa* szürkéhez a lila: /
 /* universal ----------------------------------------------------------------------- */
 
+/*
+
+Small (smaller than 640px)
+Medium (641px to 1007px)
+Large (1008px and larger)
+*/
+
 * {
   font-family: "Roboto", sans-serif;
 }
@@ -12,11 +19,6 @@ html {
 section {
   overflow: auto;
   height: 100%;
-}
-
-.cont {
-  margin: 20px;
-  padding: 20px;
 }
 
 #Active {
@@ -169,9 +171,9 @@ nav {
   grid-template-columns: 70% 30%;
   position: sticky;
   top: 0;
-  display: grid;
+  display: inline-grid;
   grid-template-rows: 1;
-  grid-template-columns: 70% 30%;
+  grid-template-columns: auto min-content;
   z-index: 1;
 }
 .modes {
@@ -216,7 +218,7 @@ nav {
   display: inline-block;
   width: fit-content;
   height: 30px;
-  justify-self: flex-end;
+  justify-self: center;
   align-self: center;
   margin-right: 30px;
 }
@@ -242,8 +244,8 @@ nav {
 
 .modes {
   height: 54px;
-  display: grid;
-  grid-template-columns: 80% 20%;
+  display: inline-grid;
+  grid-template-columns: min-content min-content;
 }
 
 /* dark and light mode button*/
@@ -255,7 +257,7 @@ nav {
   align-self: center;
   display: grid;
   grid-template-columns: 25% 50% 25%;
-  margin-right: 10px;
+  margin-right: 15px;
 }
 
 .toDark {
@@ -376,6 +378,7 @@ nav {
   margin-top: 0;
   padding-left: 40px;
   padding-right: 40px;
+  padding-bottom: 20px;
 }
 
 .aMDescription {
@@ -389,14 +392,24 @@ nav {
 }
 /* experience  -------------------------------------------------------------------- */
 
+.experience {
+  width: 100%;
+}
+
 .workTempCont {
-  width: fit-content;
-  /* margin-top: 20px; */
-  /* margin-bottom: 20px; */
+  width: 100%;
+  padding-top: 20px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: min-content min-content min-content;
   margin-left: auto;
   margin-right: auto;
+}
+
+.experience > div {
+  width: min-content;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px;
 }
 
 .left {
@@ -423,11 +436,6 @@ nav {
   margin-top: 40px;
 }
 
-.experience > div {
-  padding-left: 100px;
-  padding-right: 100px;
-}
-
 /* projects.  -------------------------------------------------------------------- */
 
 .projects {
@@ -445,7 +453,7 @@ nav {
   margin-left: 100px;
   margin-right: 100px;
   border-radius: 4px;
-  height: 700px;
+  height: 75vh;
   text-align: center;
   display: grid;
   grid-template-columns: 10% 80% 10%;
@@ -463,6 +471,7 @@ nav {
   display: inline-block;
   align-self: center;
   cursor: pointer;
+  justify-self: center;
 }
 
 .rightArrow {
@@ -471,6 +480,7 @@ nav {
   display: inline-block;
   align-self: center;
   cursor: pointer;
+  justify-self: center;
 }
 
 .dots {
@@ -479,7 +489,8 @@ nav {
   margin-left: auto;
   margin-right: auto;
   width: 30%;
-  height: 45px;
+  /* height: 45px; */
+  align-self: center;
   display: grid;
   grid-row-start: 2;
   grid-row-end: 2;
@@ -541,7 +552,7 @@ nav {
 }
 
 .educationInfo {
-  width: 600px;
+  width: 100%;
   overflow: auto;
   height: 100%;
   margin-left: auto;
@@ -571,10 +582,11 @@ nav {
 }
 
 .languageContainer {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  /* padding-top: 20px;
+  padding-bottom: 20px; */
   margin-top: 20px;
   display: grid;
+  height: 75px;
   grid-template-columns: 50% 50%;
   width: 100%;
   margin-left: auto;
@@ -584,7 +596,16 @@ nav {
 .Hun {
   display: grid;
   grid-template-columns: 80% 20%;
-  width: 100%;
+  width: 80%;
+  align-self: center;
+}
+
+.fix {
+  margin-bottom: 5px;
+}
+
+.fixx {
+  margin-top: 5px;
 }
 
 .Enlanguage {
@@ -619,7 +640,8 @@ nav {
 }
 
 .progTitle {
-  margin-top: 20px;
+  margin-top: 0;
+  padding-top: 20px;
   margin-bottom: 20px;
   padding-bottom: 20px;
 }
@@ -630,17 +652,11 @@ nav {
 }
 
 .progSkillsList ul {
-  /* width: calc(100% / 2); */
+  width: calc(100% / 3);
   list-style-type: none;
-  list-style-position: inside;
-  align-self: center;
+  margin-left: calc(100% / 2);
   text-align: left;
-}
-
-.progSkillsList li {
-  margin-left: 50%;
-  margin-right: 20%;
-  width: 30%;
+  padding-left: 0;
 }
 
 .SkillsFooter {
@@ -670,14 +686,22 @@ footer {
   margin-top: 50px;
   margin-bottom: 10px;
   display: grid;
-  grid-template-columns: 30% 40% 30%;
+  grid-template-columns: 50% 50%;
 }
 
 .footerButtons {
-  display: inline-block;
-  justify-self: center;
-  grid-column-start: 2;
+  display: grid;
+  grid-template-columns: 100%;
+  width: 100%;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  grid-column-start: 1;
   grid-column-end: 2;
+}
+
+.footerButtons div {
+  justify-self: center;
+  width: fit-content;
 }
 
 .footerButtons button {
@@ -709,12 +733,16 @@ footer {
 .place {
   justify-self: start;
   align-self: end;
+  grid-column-start: 1;
+  grid-column-end: 1;
 }
 
 .signature {
   font-size: 15px;
   justify-self: end;
   align-self: end;
+  grid-column-start: 2;
+  grid-column-end: 2;
 }
 
 /* language select-*------------------------------------------------------*/
@@ -725,7 +753,7 @@ footer {
   border-radius: 4px;
   position: fixed;
   top: 60px;
-  right: 30px;
+  right: 26px;
   z-index: 10;
   cursor: pointer;
 }
@@ -779,4 +807,340 @@ footer {
   align-self: center;
   margin-left: 25%;
   font-size: 14px;
+}
+
+@media screen and (min-width: 1600px) {
+  .middle {
+    margin-left: 200px;
+    margin-right: 200px;
+  }
+}
+@media screen and (max-width: 1300px) {
+  .Hun {
+    display: grid;
+    grid-template-columns: 80% 30%;
+    height: 75px;
+    align-self: center;
+  }
+  .Hunlanguage {
+    display: inline-block;
+    width: fit-content;
+    height: 30px;
+    justify-self: center;
+    align-self: center;
+    margin-right: 20px;
+  }
+  .Hun p {
+    text-align: center;
+  }
+  .En {
+    display: grid;
+    grid-template-columns: 30% 80%;
+    height: 75px;
+    align-self: center;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .middle {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
+/* tablet size */
+@media screen and (max-width: 1100px) {
+  /* projects */
+  .ProjectContainer {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 4px;
+    height: 600px;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+    grid-template-rows: 90% 10%;
+  }
+  /* navigation */
+  .aboutMeContainer {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .skillsContainer {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .education {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .footerContainer {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  /* navigation */
+  .nav {
+    grid-template-columns: 100%;
+  }
+
+  .modes {
+    height: 50px;
+    display: inline-grid;
+    grid-template-columns: 50% 50%;
+  }
+  .modeContainer {
+    justify-self: flex-start;
+    align-self: center;
+    margin-left: 20px;
+  }
+  .language {
+    justify-self: flex-end;
+    align-self: center;
+    margin-right: 30px;
+  }
+  .navigation {
+    display: none;
+  }
+
+  .lRArr {
+    width: 40px;
+    height: 40px;
+  }
+  /* experience */
+  .workTempCont {
+    width: 100%;
+    padding-top: 20px;
+    display: grid;
+    grid-template-rows: 350px 350px 350px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .left {
+    justify-self: center;
+    align-self: center;
+    grid-row-start: 1;
+    grid-row-end: 1;
+  }
+
+  .middle {
+    justify-self: center;
+    align-self: center;
+    grid-row-start: 2;
+    grid-row-end: 2;
+  }
+
+  .right {
+    justify-self: center;
+    align-self: center;
+    grid-row-start: 3;
+    grid-row-end: 3;
+  }
+
+  /*skills*/
+  .languageContainer {
+    /* padding-top: 20px;
+    padding-bottom: 20px; */
+    margin-top: 20px;
+    display: grid;
+    height: auto;
+    grid-template-columns: 100%;
+    grid-template-rows: 50% 50%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .Hun {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    height: 75px;
+    width: 100%;
+    align-self: center;
+  }
+  .Hunlanguage {
+    grid-row-start: 1;
+    grid-row-end: 1;
+    display: inline-block;
+    width: fit-content;
+    height: 30px;
+    justify-self: center;
+    align-self: center;
+    margin-right: 0;
+  }
+  .Hun :first-child {
+    grid-column-start: 2;
+    grid-column-end: 2;
+    text-align: center;
+    width: 100%;
+  }
+  .En {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    height: 75px;
+    width: 100%;
+    align-self: center;
+  }
+
+  .Enlanguage {
+    grid-row-start: 1;
+    grid-row-end: 1;
+    display: inline-block;
+    width: fit-content;
+    height: 30px;
+    justify-self: center;
+    align-self: center;
+    margin-left: 0;
+  }
+  .EnlanguageDesc p {
+    grid-column-start: 2;
+    grid-column-end: 2;
+    text-align: center;
+    justify-self: center;
+    width: 100%;
+  }
+
+  .progSkillsList ul {
+    width: calc(100% / 3);
+    list-style-type: none;
+    margin-left: calc(100% / 2.5);
+    text-align: left;
+    padding-left: 0;
+  }
+
+  .footerDatas {
+    grid-template-columns: 30% 70%;
+  }
+
+  .footerDatas p {
+    font-size: 10px;
+  }
+}
+
+/* phone size */
+@media screen and (max-width: 650px) {
+  .ProjectContainer {
+    height: 500px;
+  }
+  .lRArr {
+    width: 30px;
+    height: 30px;
+  }
+
+  .Hun {
+    display: grid;
+    grid-template-rows: 50% 50%;
+    grid-template-columns: 100%;
+    height: auto;
+    width: 100%;
+    align-self: center;
+  }
+  .Hunlanguage {
+    margin-top: 10px;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    display: inline-block;
+    justify-self: center;
+    align-self: center;
+    margin-right: 0;
+  }
+  .Hun :first-child {
+    grid-column-start: 1;
+    grid-row-start: 2;
+    grid-row-end: 2;
+    justify-self: center;
+    align-self: center;
+    text-align: center;
+  }
+  .HunlanguageDesc p {
+    text-align: center;
+  }
+
+  .En {
+    display: grid;
+    grid-template-rows: 50% 50%;
+    grid-template-columns: 100%;
+    height: auto;
+    width: 100%;
+    align-self: center;
+    padding-bottom: 20px;
+  }
+
+  .Enlanguage {
+    margin-top: 20px;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    display: inline-block;
+    justify-self: center;
+    align-self: center;
+    margin-right: 0;
+  }
+  .EnlanguageDesc p {
+    grid-column-start: 2;
+    grid-column-end: 2;
+    text-align: center;
+    justify-self: center;
+    width: 100%;
+  }
+
+  .languageContainer p {
+    font-size: 12px;
+  }
+
+  .progSkillsList {
+    display: grid;
+    grid-template-rows: repeat(3, minmax(0, 1fr));
+    grid-template-columns: 100%;
+  }
+  .one {
+    grid-row-start: 1;
+    grid-row-end: 1;
+    width: auto;
+    margin-left: 0% !important;
+    align-self: center;
+    justify-self: center;
+    text-align: center !important;
+  }
+
+  .two {
+    grid-row-start: 2;
+    grid-row-end: 2;
+    width: auto;
+    margin-left: 0% !important;
+    align-self: center;
+    justify-self: center;
+    text-align: center !important;
+  }
+
+  .three {
+    grid-row-start: 3;
+    grid-row-end: 3;
+    width: auto;
+    margin-left: 0% !important;
+    align-self: center;
+    justify-self: center;
+    text-align: center !important;
+  }
+
+  .footerContainer h1 {
+    font-size: 22px;
+  }
 }

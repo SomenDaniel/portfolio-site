@@ -1158,13 +1158,17 @@ footer {
   .dots button {
     width: 10px;
     height: 10px;
+    padding: 0 !important;
+    margin-bottom: 0% !important;
   }
   .language {
     width: 120px;
     height: 40px;
     margin-right: 0;
+    justify-self: flex-end;
   }
   .language button {
+    padding: 0 !important;
     width: 30px;
     height: 30px;
     border-radius: 50%;

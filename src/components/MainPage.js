@@ -57,6 +57,93 @@ function MainPage() {
       pLinks: "github",
     },
   ];
+
+  // work datas.
+  let workSlider = [
+    {
+      wPosition: `${
+        hungarian
+          ? "Frontend fejlesztő (önkéntes)"
+          : "Frontend developer (volunteer)"
+      }`,
+      wCompany: "Progmatic Academy",
+      wTime: `${
+        hungarian
+          ? "November 2021 - December 2021"
+          : "November 2021 - December 2021"
+      }`,
+      wDatas: [
+        `${
+          hungarian
+            ? "Weboldal frontend fejlesztése."
+            : "Website frontend development."
+        }`,
+        `${
+          hungarian
+            ? "Együttműködésben egy backend csapattal."
+            : "In collaboration with a backend team."
+        }`,
+        `${
+          hungarian
+            ? "Scrum módszertanban dolgoztunk."
+            : "We worked with scrum methodology."
+        }`,
+      ],
+    },
+    {
+      wPosition: `${hungarian ? "Webshop fejlesztő." : "Webshop Developer."}`,
+      wCompany: "Progmatic Academy",
+      wTime: `${
+        hungarian ? "Június 2021 - Július 2021" : "June 2021 - July 2021"
+      }`,
+      wDatas: [
+        `${
+          hungarian
+            ? "Négyfős csapatban dolgoztam."
+            : "I am worked in a four-person team."
+        }`,
+        `${
+          hungarian
+            ? "Egy magántanár foglaló oldalt fejlesztettünk."
+            : "We developed a private-tutor booking site."
+        }`,
+        `${
+          hungarian
+            ? "Tapsztalatokat szereztem fejlesztésben és csapatmunkában."
+            : "Experienced in real-life developing situations and teamwork."
+        }`,
+      ],
+    },
+    {
+      wPosition: `${
+        hungarian ? "Építésvezető." : "Construction Site Manager."
+      }`,
+      wCompany: "EB Hungary invest KFT.",
+      wTime: `${
+        hungarian
+          ? "Október 2019 - Augusztus 2020"
+          : "October 2019 - August 2020"
+      }`,
+      wDatas: [
+        `${
+          hungarian
+            ? "Felelős a munkák ellenőrzésért."
+            : "Responsible for checking the works."
+        }`,
+        `${
+          hungarian
+            ? "Egy csapat és az építési folyamat irányítása."
+            : "Team and construction process management."
+        }`,
+        `${
+          hungarian
+            ? "Egy projekt napi kivitelezésének felügyelete."
+            : "Overseeing the day-to-day construction of a project."
+        }`,
+      ],
+    },
+  ];
+
   //---------------------------------------------------------------------------------------------------------------------------------------------
 
   // disable button for 2 sec
@@ -249,49 +336,50 @@ function MainPage() {
               id="introduction"
               className={`navButton ${darkMode ? "darkColor" : "lightColor"}`}
             >
-              Sömen Dániel
+              {hungarian ? "SÖMEN DÁNIEL" : " DÁNIEL SÖMEN"}
             </button>
             <button
               onClick={scrollto}
               id="aboutMe"
               className={`navButton ${darkMode ? "darkColor" : "lightColor"}`}
             >
-              introduction
+              {hungarian ? "BEMUTATKOZÁS" : " INTRODUCTION"}
             </button>
             <button
               onClick={scrollto}
               id="experience"
               className={`navButton ${darkMode ? "darkColor" : "lightColor"}`}
             >
-              work
+              {hungarian ? "TAPASZTALATOK" : " EXPERIENCES"}
             </button>
             <button
               onClick={scrollto}
               id="projects"
               className={`navButton ${darkMode ? "darkColor" : "lightColor"}`}
             >
-              projects
+              {hungarian ? "MUNKÁIM" : "PROJECTS"}
+            </button>
+
+            <button
+              onClick={scrollto}
+              id="skills"
+              className={`navButton ${darkMode ? "darkColor" : "lightColor"}`}
+            >
+              {hungarian ? "KÉPESSÉGEK" : "SKILLS"}
             </button>
             <button
               onClick={scrollto}
               id="education"
               className={`navButton ${darkMode ? "darkColor" : "lightColor"}`}
             >
-              education
-            </button>
-            <button
-              onClick={scrollto}
-              id="skills"
-              className={`navButton ${darkMode ? "darkColor" : "lightColor"}`}
-            >
-              skills
+              {hungarian ? "TANULMÁNYOK" : "STUDIES"}
             </button>
             <button
               onClick={scrollto}
               id="footer"
               className={`navButton ${darkMode ? "darkColor" : "lightColor"}`}
             >
-              elérhetőségek
+              {hungarian ? "ELÉRHETŐSÉGEIM" : "ACCOUNTS"}
             </button>
           </div>
           <div className="modes">
@@ -304,7 +392,7 @@ function MainPage() {
                     : "lightBackgroundAndColor"
                 }`}
               >
-                dark
+                {hungarian ? "🌑" : "Dark"}
               </button>
               <button
                 onClick={changeMode}
@@ -333,7 +421,7 @@ function MainPage() {
                     : "lightBackgroundAndColor"
                 }`}
               >
-                light
+                {hungarian ? "💡" : "Light"}
               </button>
             </div>
 
@@ -358,8 +446,14 @@ function MainPage() {
         >
           <div className="container">
             <img className="profilePicture" src={profilePicture}></img>
-            <h1 className="name">Hi, I'm Daniel</h1>
-            <h3 className="title">foglalkozás</h3>
+            <h1 className="name">
+              {hungarian ? "👋 Szia! Dani vagyok." : "👋 Hi! I'm Daniel."}
+            </h1>
+            <h3 className="title">
+              {hungarian
+                ? " Junior Frontend Fejlesztő. 👨‍💻"
+                : " Junior Frontend Developer. 👨‍💻"}
+            </h3>
           </div>
         </section>
         {/* ----------------------------------------------------------------aboutme------------------------------------------------------------------- */}
@@ -380,26 +474,56 @@ function MainPage() {
                 darkMode ? "darkColor" : "lightColor"
               }`}
             >
-              {hungarian ? "Magamról" : "About Me"}
+              {hungarian ? "Magamról." : "About Me."}
             </h1>
             <div className="cont">
               <p className="aMDescription">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ut
-                ex elit. Mauris tincidunt pharetra lectus, consectetur imperdiet
-                leo condimentum et. Donec metus nibh, laoreet sed aliquet vitae,
-                ultrices laoreet massa. Nam ut elementum ante, eget luctus orci.
-                Curabitur id accumsan odio. Sed id quam vitae mauris interdum
-                convallis eu ac nulla. Aliquam erat volutpat. Vestibulum
-                volutpat ut tortor id cursus. In ac nulla commodo, dignissim
-                lectus vel, egestas tortor. Curabitur molestie congue varius.
-                Fusce faucibus lectus nec porttitor tempus. Etiam et facilisis
-                ex. Nam eu magna in tortor tempus volutpat ut nec urna. Nunc id
-                neque velit. Curabitur pulvinar odio et nulla mollis, sit amet
+                {hungarian
+                  ? `Mindig is érdekelt a programozás, az informatika, a számítógépek, és úgy döntöttem, hogy frontend fejlesztőként próbálok meg elhelyezkedni.
+                  Friss tudással rendelkezem a webfejlesztés terén és olyan technológiákat tanultam meg mint a HTML, CSS, JavaScript és React.
+                  Nagyon motivált vagyok a folyamatos szakmai fejlődésben. 
+                  Mindig keresem a lehetőségeket ahol kamatoztathatom fejlesztő képességeimet, és fejleszthetem a tudásomat. 
+                  `
+                  : `I've always been interested about programming, informatics, computers and I made a decision to start my career as a frontend developer. 
+                  I am freshly graduated and learned the basics of HTML, CSS, JavaScript and React.
+                   I am extremely motivated to constantly grow professionally.
+                   I am always looking for opportunities where I can utilize my developing skills and where i can develop my knowledge.`}
               </p>
             </div>
           </div>
         </section>
         {/* ----------------------------------------------------------------experience------------------------------------------------------------------- */}
+        {/* workSlider = [
+    {
+      wPosition: `${
+        hungarian
+          ? "Frontend fejlesztő (önkéntes)"
+          : "Frontend developer (volunteer)"
+      }`,
+      wCompany: "Progmatic Academy",
+      wTime: `${
+        hungarian
+          ? "November 2021 - December 2021"
+          : "November 2021 - December 2021"
+      }`,
+      wDatas: [
+        `${
+          hungarian
+            ? "- Weboldal frontend fejlesztése."
+            : "- Website frontend development."
+        }`,
+        `${
+          hungarian
+            ? "- Együttműködésben egy backend csapattal."
+            : "- In collaboration with a backend team."
+        }`,
+        `${
+          hungarian
+            ? "- Scrum módszertanban dolgoztunk."
+            : "- We worked with scrum methodology."
+        }`,
+      ],
+    }, */}
         <section
           className={`experience ${
             darkMode
@@ -407,17 +531,37 @@ function MainPage() {
               : "lightBackgroundAndColor lightBorderBottom"
           }`}
         >
-          <h1>munka tapasztalat</h1>
+          <h1>
+            {hungarian ? "Eddigi munkahelyeim. 👨‍💼" : "My recent jobs. 👨‍💼"}
+          </h1>
           <div className="cont">
             <div className="workTempCont">
               <div className="left">
-                <WorkDisplayTemplate dark={darkMode} />
+                <WorkDisplayTemplate
+                  dark={darkMode}
+                  position={workSlider[0].wPosition}
+                  company={workSlider[0].wCompany}
+                  workTime={workSlider[0].wTime}
+                  workDesc={workSlider[0].wDatas}
+                />
               </div>
               <div className="middle">
-                <WorkDisplayTemplate dark={darkMode} />
+                <WorkDisplayTemplate
+                  dark={darkMode}
+                  position={workSlider[1].wPosition}
+                  company={workSlider[1].wCompany}
+                  workTime={workSlider[1].wTime}
+                  workDesc={workSlider[1].wDatas}
+                />
               </div>
               <div className="right">
-                <WorkDisplayTemplate dark={darkMode} />
+                <WorkDisplayTemplate
+                  dark={darkMode}
+                  position={workSlider[2].wPosition}
+                  company={workSlider[2].wCompany}
+                  workTime={workSlider[2].wTime}
+                  workDesc={workSlider[2].wDatas}
+                />
               </div>
             </div>
           </div>
@@ -478,14 +622,16 @@ function MainPage() {
           <h1
             className={`skillsTitle ${darkMode ? "darkColor" : "lightColor"}`}
           >
-            skills
+            {hungarian ? "Programozási készségeim." : "Skills & Tools"}
           </h1>
           <div
             className={`skillsContainer ${
               darkMode ? "darkBackgroundAndColor2" : "lightBackgroundLinear"
             }`}
           >
-            <h1 className="languages">languages</h1>
+            <h3 className="languages">
+              {hungarian ? " 🗺️ Beszélt nyelvek." : "🗺️ Spoken languages"}
+            </h3>
             <div
               className={`languageContainer ${
                 darkMode ? "darkBorderBottomTop" : "lightBorderBottomTop"
@@ -514,7 +660,15 @@ function MainPage() {
                 </div>
               </div>
             </div>
-            <h1 className="progTitle">some thing i have used</h1>
+            <h3
+              className={`progTitle ${
+                darkMode ? "darkBorderBottom2" : "lightBorderBottom2"
+              }`}
+            >
+              {hungarian
+                ? "Eszközök és technológiák amiket már használtam. ⚛️"
+                : "Tools and technologies I used. ⚛️"}
+            </h3>
             <div className="progSkillsList">
               <ul className="one">
                 <li>JS</li>
@@ -532,13 +686,15 @@ function MainPage() {
                 <li>Slack</li>
               </ul>
             </div>
-            <p
+            <h3
               className={`SkillsFooter ${
                 darkMode ? "darkBorderTop2" : "lightBorderTop2"
               }`}
             >
-              valami szöveg arról h folyamatosan fejlődni szeretnék
-            </p>
+              {hungarian
+                ? "Folyamatosan keresem a lehetőségeket a szakmai fejlősésre. 📈"
+                : "I am constantly looking for opportunities to improve professionally. 📈"}
+            </h3>
           </div>
         </section>
 

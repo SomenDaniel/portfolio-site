@@ -129,7 +129,7 @@ section {
 }
 
 .lightBorderTop2 {
-  border-top: 1px solid #ced4da;
+  border-top: 1px solid #ced4da !important;
 }
 
 .lightBorderBottom3 {
@@ -210,7 +210,7 @@ nav {
   align-self: center;
 }
 .navigation button {
-  font-size: 15px;
+  font-size: 12px;
   margin-left: 20px;
 }
 
@@ -579,6 +579,7 @@ nav {
 .languages {
   padding-top: 20px;
   display: inline-block;
+  margin: 0;
 }
 
 .languageContainer {
@@ -845,6 +846,10 @@ footer {
   .middle {
     margin-left: 10px;
     margin-right: 10px;
+  }
+
+  .navigation button {
+    margin-left: 10px;
   }
 }
 
@@ -1166,14 +1171,14 @@ footer {
     height: 40px;
     margin-right: 0;
     justify-self: flex-end;
+    align-self: center;
   }
   .language button {
     padding: 0 !important;
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    margin-top: auto;
-    margin-bottom: auto;
+    margin-top: 10px !important;
     margin-right: 60px;
     margin-left: 10px;
   }

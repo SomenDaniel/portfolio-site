@@ -18,18 +18,17 @@ function WorkDisplayTemplate(props) {
             props.dark ? "darkBorderBottom2" : "lightBorderBottom2"
           }`}
         >
-          <p className="position">beosztás</p>
+          <p className="position">{props.position}</p>
         </div>
         <div className="workPlace">
-          <p>munkahely</p>
-          <p>2020-2021</p>
+          <p> {props.company}</p>
+          <p>{props.workTime}</p>
         </div>
         <div className={"WorkDescription"}>
           <div className="descriptionWrapper">
-            <p>asd</p>
-            <p>asd</p>
-            <p>asd</p>
-            <p>asd</p>
+            <p>{props.workDesc[0]}</p>
+            <p>{props.workDesc[1]}</p>
+            <p>{props.workDesc[2]}</p>
           </div>
         </div>
       </div>

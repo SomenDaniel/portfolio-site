@@ -340,6 +340,7 @@ function MainPage() {
             <div className="language">
               <button onClick={selectLanguage}>
                 <img
+                  alt="Flag"
                   src={hungarian ? hungary : uk}
                   className="activeLanguage"
                 ></img>
@@ -496,7 +497,11 @@ function MainPage() {
                   <p className="fixx">native</p>
                 </div>
                 <div className="Hunlanguage">
-                  <img src={hungary} className="activeLanguage"></img>
+                  <img
+                    alt="Flag"
+                    src={hungary}
+                    className="activeLanguage"
+                  ></img>
                 </div>
               </div>
               <div className="En">
@@ -622,7 +627,7 @@ function MainPage() {
             }`}
             onClick={chooseHun}
           >
-            <img src={hungary}></img>
+            <img alt="Flag" src={hungary}></img>
             <p>Hungarian</p>
           </button>
           <button

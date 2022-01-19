@@ -1150,8 +1150,32 @@ footer {
   .footerContainer h1 {
     font-size: 22px;
   }
+
+  .dots {
+    width: 60%;
+  }
+
   .dots button {
     width: 10px;
     height: 10px;
+  }
+  .language {
+    width: 120px;
+    height: 40px;
+    margin-right: 0;
+  }
+  .language button {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 60px;
+  }
+
+  .modeContainer {
+    grid-template-columns: 30% 40% 30%;
+    margin-right: 15px;
+  }
+  .modeContainer button {
+    padding: 0;
+    justify-self: center;
   }
 }

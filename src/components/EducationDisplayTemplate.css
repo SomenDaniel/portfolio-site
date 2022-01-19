@@ -44,15 +44,15 @@
 
 @media screen and (max-width: 650px) {
   .EduCont > h1 {
-    font-size: 18px;
+    font-size: 10px;
   }
 
   .EduCont > h3 {
-    font-size: 14px;
+    font-size: 10px;
   }
 
   .EduCont > p {
-    font-size: 14px;
+    font-size: 10px;
   }
 
   .eduDescription p {

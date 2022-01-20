@@ -805,19 +805,25 @@ function MainPage() {
             </h3>
             <div className="progSkillsList">
               <ul className="one">
-                <li>JS</li>
+                <li>JavaScript</li>
                 <li>React</li>
-                <li>HTml</li>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>node.js</li>
               </ul>
               <ul className="two">
-                <li>Css</li>
-                <li>git</li>
-                <li>github</li>
+                <li>Git</li>
+                <li>Github</li>
+                <li>Scrum</li>
+                <li>Bootstrap</li>
+                <li>npm</li>
               </ul>
               <ul className="three">
-                <li>scrum</li>
-                <li>bootstrap</li>
+                <li>CodePen</li>
                 <li>Slack</li>
+                <li>Firebase</li>
+                <li>Trello</li>
+                <li>terminal</li>
               </ul>
             </div>
             <h3

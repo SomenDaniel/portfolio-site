@@ -14,10 +14,12 @@
   display: inline-block;
   margin-left: 20px;
   margin-right: 20px;
+  font-size: 18px;
 }
 .EduCont > h3 {
   display: inline-block;
   margin-right: 20px;
+  font-size: 18px;
 }
 
 .eduDescription {
@@ -32,6 +34,14 @@
   .EduCont {
     width: 600px;
     height: 150px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .eduDescription p {
+    font-size: 10px;
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
   }
 }
 
@@ -57,5 +67,25 @@
 
   .eduDescription p {
     font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .EduCont > h1 {
+    font-size: 8px;
+  }
+
+  .EduCont > h3 {
+    font-size: 8px;
+  }
+
+  .EduCont > p {
+    font-size: 8px;
+  }
+
+  .eduDescription p {
+    font-size: 7px;
+    /* margin-top: 1px !important;
+    margin-bottom: 1px !important; */
   }
 }

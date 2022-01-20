@@ -8,7 +8,7 @@ import downArrow from "../images/downArrow.png";
 import rightArrow from "../images/rightArrow.png";
 import leftArrow from "../images/leftArrow.png";
 import upArrow from "../images/upArrow.png";
-import hungary from "../images/Hungary.webp";
+import hungary from "../images/Hungary.png";
 import uk from "../images/UK.png";
 import EducationDisplayTemplate from "./EducationDisplayTemplate";
 import ProjectTemplate from "./ProjectTemplate";
@@ -58,6 +58,85 @@ function MainPage() {
     },
   ];
 
+  // study datas.
+
+  let studySlider = [
+    {
+      sName: `${
+        hungarian ? "Junior Frontend fejlesztő" : "Junior Frontend developer"
+      }`,
+      sWhere: "Progmatic Academy",
+      sWhen: `${
+        hungarian ? "Március 2021 - Június 2021" : "March 2021 - June 2021"
+      }`,
+      sDatas: [
+        `${
+          hungarian
+            ? "JavaScript és React tapasztalat."
+            : "JavaScript and React knowledge."
+        }`,
+        `${
+          hungarian
+            ? "HTML, CSS, Git és GitHub tanulmányok."
+            : "HTML, CSS, Git and GitHub knowledge."
+        }`,
+        `${
+          hungarian
+            ? "Projektmunka csapatban és egyedül."
+            : "Project work in a team and alone."
+        }`,
+      ],
+    },
+    {
+      sName: `${hungarian ? "Magasépítő technikus" : "Building Technician"}`,
+      sWhere: `${
+        hungarian
+          ? "Schulek Frigyes Szakgimnázium"
+          : "Schulek Frigyes High School"
+      }`,
+      sWhen: `${
+        hungarian
+          ? "Szeptember 2018 - Július 2019"
+          : "September 2018 - July 2019"
+      }`,
+      sDatas: [
+        `${
+          hungarian
+            ? "Építési technológiák ismerete."
+            : "Knowledge of construction technologies."
+        }`,
+        `${
+          hungarian
+            ? "Épületfizikai alapok."
+            : "Fundamentals of building physics."
+        }`,
+        `${
+          hungarian
+            ? "Építési környezet menedzselése."
+            : "Construction environment management."
+        }`,
+      ],
+    },
+    {
+      sName: `${hungarian ? "Érettségi" : "Graduation"}`,
+      sWhere: `${
+        hungarian
+          ? "Schulek Frigyes Szakgimnázium"
+          : "Schulek Frigyes High School"
+      }`,
+      sWhen: `${
+        hungarian
+          ? "Szeptember 2014 - Július 2018"
+          : "September 2014 - July 2018"
+      }`,
+      sDatas: [
+        `${hungarian ? "" : ""}`,
+        `${hungarian ? "" : ""}`,
+        `${hungarian ? "" : ""}`,
+      ],
+    },
+  ];
+
   // work datas.
   let workSlider = [
     {
@@ -99,18 +178,18 @@ function MainPage() {
       wDatas: [
         `${
           hungarian
-            ? "Négyfős csapatban dolgoztam."
-            : "I am worked in a four-person team."
+            ? "- Négyfős csapatban dolgoztam."
+            : "- I am worked in a four-person team."
         }`,
         `${
           hungarian
-            ? "Egy magántanár foglaló oldalt fejlesztettünk."
-            : "We developed a private-tutor booking site."
+            ? "- Egy magántanár foglaló oldalt fejlesztettünk."
+            : "- We developed a private-tutor booking site."
         }`,
         `${
           hungarian
-            ? "Tapsztalatokat szereztem fejlesztésben és csapatmunkában."
-            : "Experienced in real-life developing situations and teamwork."
+            ? "- Tapsztalatokat szereztem fejlesztésben és csapatmunkában."
+            : "- Experienced in real-life developing situations and teamwork."
         }`,
       ],
     },
@@ -127,18 +206,18 @@ function MainPage() {
       wDatas: [
         `${
           hungarian
-            ? "Felelős a munkák ellenőrzésért."
-            : "Responsible for checking the works."
+            ? "- Felelős a munkák ellenőrzésért."
+            : "- Responsible for checking the works."
         }`,
         `${
           hungarian
-            ? "Egy csapat és az építési folyamat irányítása."
-            : "Team and construction process management."
+            ? "- Egy csapat és az építési folyamat irányítása."
+            : "- Team and construction process management."
         }`,
         `${
           hungarian
-            ? "Egy projekt napi kivitelezésének felügyelete."
-            : "Overseeing the day-to-day construction of a project."
+            ? "- Egy projekt napi kivitelezésének felügyelete."
+            : "- Overseeing the day-to-day construction of a project."
         }`,
       ],
     },
@@ -482,7 +561,7 @@ function MainPage() {
                   ? `Mindig is érdekelt a programozás, az informatika, a számítógépek, és úgy döntöttem, hogy frontend fejlesztőként próbálok meg elhelyezkedni.
                   Friss tudással rendelkezem a webfejlesztés terén és olyan technológiákat tanultam meg mint a HTML, CSS, JavaScript és React.
                   Nagyon motivált vagyok a folyamatos szakmai fejlődésben. 
-                  Mindig keresem a lehetőségeket ahol kamatoztathatom fejlesztő képességeimet, és fejleszthetem a tudásomat. 
+                  Mindig keresem a lehetőségeket, ahol kamatoztathatom fejlesztő képességeimet, és növelhetem a tudásomat. 
                   `
                   : `I've always been interested about programming, informatics, computers and I made a decision to start my career as a frontend developer. 
                   I am freshly graduated and learned the basics of HTML, CSS, JavaScript and React.
@@ -575,7 +654,10 @@ function MainPage() {
               : "lightBackgroundAndColor lightBorderBottom"
           }`}
         >
-          <h1 className="projectTitle">projektek</h1>
+          <h1 className="projectTitle">
+            {" "}
+            {hungarian ? "Munkáim." : "My projects."}
+          </h1>
           <div
             className={`ProjectContainer ${
               darkMode ? "darkBackgroundAndColor2" : "lightBackgroundLinear"
@@ -639,24 +721,27 @@ function MainPage() {
             >
               <div className="Hun">
                 <div className="HunlanguageDesc">
-                  <p className="fix">Hungarian</p>
-                  <p className="fixx">native</p>
+                  <p className="fix">
+                    {" "}
+                    {hungarian ? " Magyar." : "Hungarian."}
+                  </p>
+                  <p className="fixx">
+                    {hungarian ? " Anyanyelv." : "Native."}
+                  </p>
                 </div>
                 <div className="Hunlanguage">
-                  <img
-                    alt="Flag"
-                    src={hungary}
-                    className="activeLanguage"
-                  ></img>
+                  <img alt="Hun" src={hungary} className="activeLanguage"></img>
                 </div>
               </div>
               <div className="En">
                 <div className="Enlanguage">
-                  <img src={uk} className="activeLanguage"></img>
+                  <img src={uk} alt="En" className="activeLanguage"></img>
                 </div>
                 <div className="EnlanguageDesc">
-                  <p className="fix">English</p>
-                  <p className="fixx">Language certificate B2</p>
+                  <p className="fix">{hungarian ? " Angol." : "English."}</p>
+                  <p className="fixx">
+                    {hungarian ? " Középfok." : "Language certificate B2."}
+                  </p>
                 </div>
               </div>
             </div>
@@ -711,18 +796,40 @@ function MainPage() {
               darkMode ? "darkBackgroundAndColor2" : "lightBackgroundLinear"
             }`}
           >
-            <h1 className="educationTitle">képzettség</h1>
+            <h1 className="educationTitle">
+              {" "}
+              {hungarian ? "Tanulmányok." : "Studies."}
+            </h1>
             {edu ? (
               <div className="educationInfo">
-                <EducationDisplayTemplate dark={darkMode} />
-                <EducationDisplayTemplate dark={darkMode} />
-                <EducationDisplayTemplate dark={darkMode} />
-                <EducationDisplayTemplate dark={darkMode} />
-                <EducationDisplayTemplate dark={darkMode} />
-                <EducationDisplayTemplate dark={darkMode} />
+                <EducationDisplayTemplate
+                  dark={darkMode}
+                  education={studySlider[0].sName}
+                  where={studySlider[0].sWhere}
+                  when={studySlider[0].sWhen}
+                  desc={studySlider[0].sDatas}
+                />
+                <EducationDisplayTemplate
+                  dark={darkMode}
+                  education={studySlider[1].sName}
+                  where={studySlider[1].sWhere}
+                  when={studySlider[1].sWhen}
+                  desc={studySlider[1].sDatas}
+                />
+                <EducationDisplayTemplate
+                  dark={darkMode}
+                  education={studySlider[2].sName}
+                  where={studySlider[2].sWhere}
+                  when={studySlider[2].sWhen}
+                  desc={studySlider[2].sDatas}
+                />
               </div>
             ) : null}
-            {edu ? null : <p className="cte">click to expand.</p>}
+            {edu ? null : (
+              <p className="cte">
+                {hungarian ? "Kiterjesztés." : "Click to expand."}
+              </p>
+            )}
             {edu ? null : (
               <button onClick={showEdu} className="downArrow">
                 <img className="dArr" src={downArrow}></img>
@@ -748,22 +855,30 @@ function MainPage() {
                 <button
                   className={`${darkMode ? "darkButton" : "lightbutton"}`}
                 >
-                  linkedin
+                  LinkedIn
                 </button>
                 <button
                   className={`${darkMode ? "darkButton" : "lightbutton"}`}
                 >
-                  linkedin
+                  Github
                 </button>
               </div>
             </div>
             <div className="footerDatas">
               <div className="place">
-                <p>Budapest, hungary</p>
+                <p>
+                  {hungarian ? "Budapest, Magyarország." : "Budapest, Hungary."}
+                </p>
               </div>
 
               <div className="signature">
-                <p>2022 | Designed & coded by Dániel Sömen. &#169;</p>
+                <p>
+                  2022 |
+                  {hungarian
+                    ? " Tervezte és kódolta: Sömen Dániel."
+                    : " Designed & coded by Dániel Sömen."}{" "}
+                  &#169;
+                </p>
               </div>
             </div>
           </div>
@@ -783,8 +898,8 @@ function MainPage() {
             }`}
             onClick={chooseHun}
           >
-            <img alt="Flag" src={hungary}></img>
-            <p>Hungarian</p>
+            <img alt="Hun" src={hungary}></img>
+            <p>{hungarian ? " Magyar." : "Hungarian."}</p>
           </button>
           <button
             className={`${
@@ -792,8 +907,8 @@ function MainPage() {
             }`}
             onClick={chooseEn}
           >
-            <img src={uk}></img>
-            <p>English</p>
+            <img alt="En" src={uk}></img>
+            <p>{hungarian ? " Angol." : "English."}</p>
           </button>
         </div>
       </div>

@@ -8,13 +8,13 @@ function EducationDisplayTemplate(props) {
         props.dark ? "darkTransparent darkColor" : "lightTransparent lightColor"
       }`}
     >
-      <h1>végzettség</h1>
-      <h3>hol végeztél</h3>
-      <p>mikor</p>
+      <h1>{props.education}</h1>
+      <h3>{props.where}</h3>
+      <p>{props.when}</p>
       <div className="eduDescription">
-        <p>asssssssssssssssssssssssssss</p>
-        <p>assssssssssssssssssssssss</p>
-        <p>assssssssssssssssssssssss</p>
+        <p>{props.desc[0]}</p>
+        <p>{props.desc[1]}</p>
+        <p>{props.desc[2]}</p>
       </div>
     </div>
   );

@@ -24,7 +24,15 @@ function ProjectTemplate(props) {
               <p>{props.description}</p>
             </div>
             <p className="projectTechnologies">{props.technologies}</p>
-            <p className="projectLinks">{props.links}</p>
+            <a
+              target="_blank"
+              className={`projectLinks ${
+                props.dark ? "darkColor" : "lightColor"
+              }`}
+              href={props.links}
+            >
+              Github
+            </a>
           </div>
         </div>
       </div>

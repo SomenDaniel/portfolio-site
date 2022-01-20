@@ -745,6 +745,21 @@ footer {
   grid-column-end: 2;
 }
 
+.footerLinks {
+  width: 100px !important;
+  text-align: center !important;
+  text-decoration: none;
+  margin-right: 0% !important;
+}
+
+.footerLinks[class*="lightColor"]:hover {
+  color: #e9ecef;
+}
+
+.footerLinks[class*="darkColor"]:hover {
+  color: #030303;
+}
+
 /* language select-*------------------------------------------------------*/
 .LanguageSelect {
   display: block;
@@ -1071,7 +1086,7 @@ footer {
 /* phone size */
 @media screen and (max-width: 650px) {
   .ProjectContainer {
-    height: 500px;
+    height: 450px;
   }
   .lRArr {
     width: 30px;

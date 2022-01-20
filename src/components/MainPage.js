@@ -10,6 +10,11 @@ import leftArrow from "../images/leftArrow.png";
 import upArrow from "../images/upArrow.png";
 import hungary from "../images/Hungary.png";
 import uk from "../images/UK.png";
+import ah from "../images/AH.png";
+import bookr from "../images/BOOKR.png";
+import gmn from "../images/GMN.png";
+import mapty from "../images/MAP.png";
+import pig from "../images/PG.png";
 import EducationDisplayTemplate from "./EducationDisplayTemplate";
 import ProjectTemplate from "./ProjectTemplate";
 
@@ -44,17 +49,59 @@ function MainPage() {
   // project datas.
   let dataSlider = [
     {
-      pName: "projekt",
-      pDescription:
-        "a projekt rövid leírása.a projekt rövid leírása.a projekt rövid leírása.a projekt rövid leírása.a projekt rövid leírása.a projekt rövid leírása.",
-      pTechnologies: ["HTML", "css", "js", "react"],
-      pLinks: "github link",
+      pName: "AdventureHub",
+      pPicture: ah,
+      pDescription: `${
+        hungarian
+          ? "Ezen a weboldalon online szerepjátékokat lehet kipróbálni és írni. A projekten egy beckend csapattal dolgoztam együttműködésben akik az adatokat szolgáltatták. Az oldalhoz emelett tartozik regisztráció és bejelentkezés illetve még sok funkció."
+          : "You can try and write online role-playing games on this website. I worked on the project with a beckend team who provided the data to the site. The site has registration, login and many features."
+      }`,
+      pTechnologies: ["HTML,", "CSS,", "JS,", "React"],
+      pLinks: "https://github.com/SomenDaniel/Dungeons-Dragons",
     },
     {
-      pName: "projekt2",
-      pDescription: "a projekt rövid leírása.2",
-      pTechnologies: ["HTML", "css", "js", "react", "2"],
-      pLinks: "github",
+      pName: "Bookr",
+      pPicture: bookr,
+      pDescription: `${
+        hungarian
+          ? "Ez az projekt egy magántanár kereső és foglaló, valamint tanárként hirdető funkciókkal is szolgáló weboldal. A projekten egy négyfős csapattal dolgoztunk közösen a fejlesztő képzésünk lezárásaként. Az oldalon szinte minden alap funkció megtalálható amivel egy foglalással kapcsolatos oldalon lehet találkozni."
+          : "On this page you can search and book private tutors. You can advertise yourself as a private teacher. We worked on the project with a team of four to complete this project. The site has almost all the basic features you can find on a booking page."
+      }`,
+      pTechnologies: ["HTML,", "CSS,", "JS,", "React,", "Bootstrap"],
+      pLinks: "https://github.com/SomenDaniel/bookr",
+    },
+    {
+      pName: "Mapty (Learning project)",
+      pPicture: mapty,
+      pDescription: `${
+        hungarian
+          ? "Ezt az oldalt egy udemy kurzus szorán építettem meg. Az volt a célom ezzel, hogy frissítsem a programozói tudásomat és új dolgokat tanuljak meg. Az oldalon az edzéseidet lehet feljegyezni illetve tartozik hozzá egy világtérkép is ami a te pozíciódat jelöli meg."
+          : "I built this page during an udemy course. My goal with this was to update my programming skills and learn new things. On the page you can record your trainings and it also has a world map that indicates your position."
+      }`,
+      pTechnologies: ["HTML,", "CSS,", "JS"],
+      pLinks: "https://github.com/SomenDaniel/learning-project-mapty",
+    },
+    {
+      pName: "Pig game (Learning project)",
+      pPicture: pig,
+      pDescription: `${
+        hungarian
+          ? "Ezt az oldalt egy udemy kurzus szorán építettem meg. Az volt a célom ezzel, hogy frissítsem a programozói tudásomat és új dolgokat tanuljak meg. Az oldal egy egyszerű társasjátékot szimulál."
+          : "I built this page during an udemy course. My goal with this was to update my programming skills and learn new things. The site simulates a simple board game."
+      }`,
+      pTechnologies: ["HTML,", "CSS,", "JS"],
+      pLinks: "https://github.com/SomenDaniel/learning-porject-pig-game",
+    },
+    {
+      pName: "Guess my number (Learning project)",
+      pPicture: gmn,
+      pDescription: `${
+        hungarian
+          ? "Ezt az oldalt egy udemy kurzus szorán építettem meg. Az volt a célom ezzel, hogy frissítsem a programozói tudásomat és új dolgokat tanuljak meg. Az oldalon egy egyszerű játék található, ami arról szól, hogy ki kell találnod egy random generált számot."
+          : "I built this page during an udemy course. My goal with this was to update my programming skills and learn new things. There is a simple game on the site that is about having to guess a random generated number."
+      }`,
+      pTechnologies: ["HTML,", "CSS,", "JS"],
+      pLinks: "https://github.com/SomenDaniel/learning-project-GMN",
     },
   ];
 
@@ -252,6 +299,8 @@ function MainPage() {
       name = event.target.className;
       selected = document.querySelector(`.${name}`);
       selected.id = `Active`;
+      console.log(name);
+      console.log(Number(name.charAt(name.length - 1)));
       setSlideIndex(Number(name.charAt(name.length - 1)));
       setButtonDisabled(true);
     }
@@ -667,7 +716,7 @@ function MainPage() {
               <img className="lRArr" src={leftArrow}></img>
             </button>
             <ProjectTemplate
-              picture={profilePicture}
+              picture={dataSlider[slideIndex - 1].pPicture}
               title={dataSlider[slideIndex - 1].pName}
               description={dataSlider[slideIndex - 1].pDescription}
               technologies={dataSlider[slideIndex - 1].pTechnologies.join(" ")}
@@ -687,7 +736,7 @@ function MainPage() {
               ></button>
               <button onClick={ActiveDot} className="dot2"></button>
               <button onClick={ActiveDot} className="dot3"></button>
-              <button onClick={ActiveDot} className="dot"></button>
+              <button onClick={ActiveDot} className="dot4"></button>
               <button onClick={ActiveDot} className="dot5"></button>
             </div>
           </div>
@@ -855,12 +904,30 @@ function MainPage() {
                 <button
                   className={`${darkMode ? "darkButton" : "lightbutton"}`}
                 >
-                  LinkedIn
+                  <a
+                    target="_blank"
+                    className={`footerLinks ${
+                      darkMode ? "darkColor" : "lightColor"
+                    }`}
+                    href={
+                      "https://www.linkedin.com/in/d%C3%A1niel-s%C3%B6men-695411217/"
+                    }
+                  >
+                    LinkedIn
+                  </a>
                 </button>
                 <button
                   className={`${darkMode ? "darkButton" : "lightbutton"}`}
                 >
-                  Github
+                  <a
+                    target="_blank"
+                    className={`footerLinks ${
+                      darkMode ? "darkColor" : "lightColor"
+                    }`}
+                    href={"https://github.com/SomenDaniel"}
+                  >
+                    Github
+                  </a>
                 </button>
               </div>
             </div>
